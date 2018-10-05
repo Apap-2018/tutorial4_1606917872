@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+	
+<head>
+	<title>Home</title>
+</head>
+	
+<body>
+	<h2>Hello!</h2>
+		
+	<h3>Tambah Pilot</h3>
+	<td><a th:href="@{/pilot/add}">Tambah</a></td>
+	<br>
+	<h3>Cari Pilot berdasarkan Nomor Lisensi</h3>
+	<form th:action="@{/pilot/view}" th:objects="${pilot}" method="GET">
+		License Number: <br>
+		<input type="text" name="licenseNumber" />
+		<button type="submit">Cari</button>
+	</form>
+	<br>
+	<h3>Delete Pilot berdasarkan Nomor Lisensi</h3>
+	<form th:action="@{/pilot/delete}" th:objects="${pilot}" method="GET">
+		License Number: <br>
+		<input type="text" name="licenseNumber" />
+		<button type="submit">Cari</button>
+	</form>
+	<br>
+	<h3>Update Pilot berdasarkan Nomor Lisensi</h3>
+	<form th:action="@{/pilot/update}" th:objects="${pilot}" method="GET">
+		License Number: <br>
+		<input type="text" name="licenseNumber" />
+		<button type="submit">Cari</button>
+	</form>
+	
+</body>
+	
+</html>
